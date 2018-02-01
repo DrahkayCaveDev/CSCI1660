@@ -10,24 +10,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner( System.in );
-        double convert = 0;
+        double convert = 0, answer = 0;
+
         String input;
+        Scanner scanner = new Scanner(System.in);
 
-        while(convert >= -267.77777777777777){
+        while (answer >= -273.3333333333333) {
 
-            try{
-                System.out.print( "Feed me a fahrenheit temperature(type -451 or lower to end my suffering): " );
+            try {
 
-                input = (scanner.nextLine());
+                convert = UserInput();
 
-                convert = Double.parseDouble(input);
+                answer = Convertion(convert);
 
-                convert =(convert - 32)*5/9;
 
-                System.out.println( "Celsius: " + convert);
-            }
-            catch(NumberFormatException ex){
+                System.out.println("Celsius: " + answer);
+            } catch (NumberFormatException ex) {
                 System.out.print("Actually type a number(Press enter to continue)");
                 input = (scanner.nextLine());
             }
@@ -36,4 +34,3 @@ public class Main {
         }
 
     }
-}
