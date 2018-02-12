@@ -53,9 +53,12 @@ public class Main {
 
         while (valid.equals("False")) {
             Scanner scan = new Scanner(System.in);
+            boolean check = true;
             System.out.println("Enter a name: ");
             name = scan.nextLine();
-            if (name.equals("")) {
+
+            check = address.check(check, name);
+            if (name.equals("") || check == false) {
                 valid = "False";
                 System.out.println("Sorry not a valid name.");
             } else {
@@ -151,6 +154,15 @@ public class Main {
 
                 }
             }
+        }
+
+        public static boolean check(boolean check, String name){
+
+            if(book.containsKey(name)) {
+                check = false;
+                System.out.println("The name " + name + " is already taken");
+            }
+            return check;
         }
     }
 }
