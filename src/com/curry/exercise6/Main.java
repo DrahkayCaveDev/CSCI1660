@@ -78,29 +78,28 @@ public class Main {
         public Input(){
         }
 
-        public static void input(String value){
-
-            string = value;
-        }
-
-        public static void input(Integer value){
-            integer = value;
-        }
-
-        public static void input(Double value){
-            doub = value;
-        }
-
-        public int getInteger() {
-            return integer;
-        }
-
-        public String getString() {
+        public static String getString() {
             return string;
         }
 
-        public double getDoub() {
+        public static void input(String string) {
+            Input.string = string;
+        }
+
+        public static int getInteger() {
+            return integer;
+        }
+
+        public static void input(int integer) {
+            Input.integer = integer;
+        }
+
+        public static double getDoub() {
             return doub;
+        }
+
+        public static void input(double doub) {
+            Input.doub = doub;
         }
     }
 }
