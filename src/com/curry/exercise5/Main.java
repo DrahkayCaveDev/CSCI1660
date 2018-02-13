@@ -1,9 +1,6 @@
-package com.company;
+package com.curry.helloworld;
 
-import jdk.management.cmm.SystemResourcePressureMXBean;
-
-import java.io.IOException;
-import java.util.*;
+        import java.util.*;
 
 public class Main {
 
@@ -19,7 +16,7 @@ public class Main {
             try {
                 Scanner scan = new Scanner(System.in);
                 System.out.printf("Choose an action by typing a number");
-                System.out.printf("%n1: Enter an email %n2: View emails %n3: Select email");
+                System.out.printf("%n1: Enter an email %n2: View emails %n3: Select email%n");
                 choice = scan.nextInt();
             } catch (InputMismatchException ex) {
                 choice = 5;
@@ -93,8 +90,8 @@ public class Main {
     }
 
     public static class Address {
-        static HashMap<String, String> book = new HashMap<String, String>();
-        static List<String> keys = new ArrayList<String>();
+        static HashMap<String, String> book = new HashMap<>();
+        static List<String> keys = new ArrayList<>();
 
         public Address() {
         }
