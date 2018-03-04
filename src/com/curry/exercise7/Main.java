@@ -1,7 +1,7 @@
-package com.curry.helloworld;
+package com.curry.test;
 
 
-        import java.util.*;
+import java.util.*;
 
 public class Main {
 
@@ -74,7 +74,7 @@ public class Main {
     }
 
     public static class Person {
-         String personEmail, personName;
+        String personEmail, personName;
 
         public Person() {
         }
@@ -96,11 +96,12 @@ public class Main {
     }
 
     public static class Contact extends Person{
-         List contact;
-         String personContact;
+        List<String> contact = new ArrayList<>();
+        String personContact;
 
-        public Contact(String email, String name, String personContact) {
+        public Contact(String email, String name, String number) {
             super(email, name);
+            personContact = number;
         }
 
         public  String getPersonContact() {
@@ -108,18 +109,16 @@ public class Main {
         }
 
         public List getContact() {
-            String email = getPersonEmail();
-            String number = getPersonContact();
-            System.out.println(email);
-            contact.add(email);
-            contact.add(number);
+
+            contact.add(getPersonEmail());
+            contact.add(getPersonContact());
             return contact;
         }
     }
 
     public static class Address {
-         HashMap<String, List> book = new HashMap<>();
-         List<String> keys = new ArrayList<>();
+        HashMap<String, List> book = new HashMap<>();
+        List<String> keys = new ArrayList<>();
 
         public Address() {
         }
@@ -132,7 +131,7 @@ public class Main {
         public void view() {
             boolean valid = false;
             for (int i = 0; i < keys.size(); i++) {
-                System.out.println("Name: " + keys.get(i) + ", Address: " + book.get(keys.get(i)));
+                System.out.println("Name: " + keys.get(i) + ", Address: " + book.get(keys.get(i)).get(0) + ", Number: " + book.get(keys.get(i)).get(1));
                 Scanner scan = new Scanner(System.in);
                 String exit;
                 System.out.println("Press enter to continue");
@@ -167,7 +166,7 @@ public class Main {
                         condtion = 0;
                     } else {
                         if (book.get(choice) != null) {
-                            System.out.println(choice + "'s email: " + book.get(choice));
+                            System.out.println(choice + "'s email: " + book.get(choice).get(0) + ", " + choice + "'s number: " + book.get(choice).get(1));
                         } else {
                             System.out.println("Try again");
                             scan = new Scanner(System.in);
@@ -186,7 +185,7 @@ public class Main {
                 if (book.containsKey(name)) {
                     check = false;
                     System.out.println("The name " + name + " is already taken");
-                } else if ((book.get(name).get(1)) == number) {
+                } else if (book.containsValue(number)) {
                     check = false;
                     System.out.println("The number " + number + " is already taken");
                 }
