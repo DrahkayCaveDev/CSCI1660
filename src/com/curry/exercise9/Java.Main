@@ -11,7 +11,7 @@ public class Main {
             try {
                 Scanner scan = new Scanner(System.in);
                 System.out.printf("Choose an action by typing a number");
-                System.out.printf("%n1: Enter an email %n2: View emails %n3: Select email%n0: Exit%n");
+                System.out.printf("%n1: Enter an email %n2: View emails %n3: Select email %n4: Contact someone %n0: Exit%n");
                 choice = scan.nextInt();
             } catch (InputMismatchException ex) {
                 choice = 5;
@@ -208,6 +208,7 @@ public class Main {
                 exit = scan.nextLine();
 
             } else {
+                String choose = "";
                 while (condtion != 0) {
                     scan = new Scanner(System.in);
                     System.out.println("Type in the name of a person who's email or phone you want to contact or push enter without typing anything to stop");
@@ -222,10 +223,10 @@ public class Main {
                             while (!valid) {
                                 System.out.println("Do you wish to call or email " + choice);
                                 scan = new Scanner(System.in);
-                                System.out.println("Type mail to email" + choice + "or type call to call " + choice);
-                                choice = scan.nextLine();
+                                System.out.println("Type mail to email " + choice + " or type call to call " + choice);
+                                choose = scan.nextLine();
 
-                                if (choice.equals("mail") || choice.equals("call")) {
+                                if (choose.equals("mail") || choose.equals("call")) {
                                     valid = true;
                                 } else {
                                     scan = new Scanner(System.in);
@@ -233,7 +234,7 @@ public class Main {
                                     exit = scan.nextLine();
                                 }
                             }
-                            if (choice.equals("call")) {
+                            if (choose.equals("call")) {
                                 System.out.println("Calling " + book.get(choice).get(1));
                             } else {
                                 System.out.println("Emailing " + book.get(choice).get(0));
