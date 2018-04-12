@@ -177,7 +177,7 @@ class Checklist implements SortViewer {
     @Override
     public void read() {
         for (int i : size) {
-            System.out.println(i + 1 + ": " + taskList.get(i));
+            System.out.println(i + 1 + ": Priority: " + taskList.get(i).get(2) + " Title: " + taskList.get(i).get(0) + " Description: " + taskList.get(i).get(1));
         }
         System.out.printf("%nPress enter to continue ");
         try {
@@ -222,6 +222,154 @@ class Checklist implements SortViewer {
             taskList.remove(i + size.size());
         }
 
-        System.out.println(taskList);
+        for (int i : size) {
+            taskList.put((i + size.size()), taskList.get(i));
+            taskList.remove(i);
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 5) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 4) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 3) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 2) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 1) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i : size) {
+            for (int q : size) {
+                if (Integer.parseInt(String.valueOf(taskList.get(q + size.size()).get(2))) == 0) {
+                    if (taskList.get(i) == null) {
+                        if (taskList.get(0) == null) {
+                            user.add(taskList.get(q + size.size()));
+                            taskList.put(i, user.get(0));
+                            user.removeAll(user);
+                        }else {
+                            try {
+                                if (taskList.get(i - 1).get(0) != taskList.get(q + size.size()).get(0)) {
+                                    user.add(taskList.get(q + size.size()));
+                                    taskList.put(i, user.get(0));
+                                    user.removeAll(user);
+                                }
+                            }catch (NullPointerException e){
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
