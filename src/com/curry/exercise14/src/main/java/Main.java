@@ -1,6 +1,4 @@
-/**
- * Created by 114512 on 4/24/2018.
- */
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
