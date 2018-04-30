@@ -1,9 +1,4 @@
-/**
- * Created by 114512 on 4/24/2018.
- */
-//Ean McFadden
-//April 24, 2018
-//Project 4
+
 import java.util.*;
 import java.io.*;
 import com.google.gson.Gson;
